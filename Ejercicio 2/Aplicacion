@@ -1,0 +1,13 @@
+public class Aplicacion {
+    public static void main(String[] args){
+        Juego juego1 = new Juego(5);
+        Juego juego2 = new Juego(5);
+        juego1.QuitaVida();
+        juego1.MuestraVidasRestantes();
+        juego1.ReiniciaPartida();
+        juego1.MuestraVidasRestantes();
+        juego1.ActualizarRecord();// tiene 5 vidas x lo que hace un nuevo record
+        juego2.ActualizarRecord();//este   tien 5 vidas por lo que alcanza el record
+        
+    
+    }

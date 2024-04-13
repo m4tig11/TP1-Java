@@ -1,0 +1,8 @@
+package com.mycompany.tpjava;
+public interface Jugable {
+    
+    void Juega();
+    void MuestraNombre();//Muestra nomre del juego obligafo
+    void MuestraInfo();//Muestra info del juego obligado
+    
+}

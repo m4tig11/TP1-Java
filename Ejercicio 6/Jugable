@@ -1,0 +1,9 @@
+package juegos.interfaces;
+
+public interface Jugable {
+    
+    void Juega();
+    void MuestraNombre();//Muestra nomre del jueg
+    void MuestraInfo();//Muestra info del juego 
+    
+}

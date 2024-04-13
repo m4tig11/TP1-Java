@@ -1,0 +1,44 @@
+package profesor;
+
+import java.io.*;
+
+public class teclado {
+    public static char LeeCaracter() {
+        char ch;
+        try {
+            ch = LeeCadena().charAt(0);
+        } catch (Exception e) {
+            ch = 0;
+        }
+        return ch;
+    }
+
+    public static String LeeCadena() {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        String str;
+        try {
+            str = br.readLine();
+        } catch (Exception e) {
+            str = "";
+        }
+        return str;
+    }
+
+    public static int LeeEntero() {
+        int num = 0;
+        boolean entradaValida = false;
+        while (!entradaValida) {
+            try {
+                num = Integer.parseInt(LeeCadena().trim());
+                entradaValida = true; // Si se llega aquí, la entrada es válida
+            } catch (NumberFormatException e) {
+                System.out.println("Por favor, introduzca un número válido.");
+            } catch (Exception e) {
+                // Si ocurre cualquier otra excepción, simplemente salimos del bucle
+                break;
+            }
+        }
+        return num;
+    }
+}
+

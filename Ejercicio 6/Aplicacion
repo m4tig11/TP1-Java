@@ -1,1 +1,81 @@
+package com.mycompany.tpjava;
+
+import juegos.numeros.JuegoAdivinaPar;
+import juegos.interfaces.Jugable;
+import java.util.Scanner;
+import java.util.Vector;
+import juegos.letras.JuegoAhorcado;
+import juegos.numeros.JuegoAdivinaImpar;
+import juegos.numeros.JuegoAdivinaNumero;
+
+public class TpJava {
+    public static boolean jugar = true;
+    public static void main(String[] args){
+        
+        while(jugar == true){
+            Jugable juego = EligeJuego();
+            juego.MuestraNombre();
+            juego.MuestraInfo();
+            juego.Juega();
+            
+        }
+    }
+    
+    public static void mostrarMenu() {
+        System.out.println("Bienvenido al menú de juegos:");
+        System.out.println("0. Juego Adivina numero");
+        System.out.println("1. Juego Adivina numero par");
+        System.out.println("2. Juego Adivina numero impar");
+        System.out.println("3. Juego Ahorcado");
+    }
+
+    public static Jugable EligeJuego(){
+        JuegoAdivinaNumero j1 = new JuegoAdivinaNumero(5);
+        JuegoAdivinaPar jp1 = new JuegoAdivinaPar(5);
+        JuegoAdivinaImpar ji1 = new JuegoAdivinaImpar(5);
+        JuegoAhorcado ja = new JuegoAhorcado(5,"papa");
+        
+        // Crear un vector con capacidad 3 e incremento en saltos de 2 elementos
+        Vector<Jugable> juegosVector = new Vector<>(3, 2);
+        
+        // Añadir los juegos al vector
+        juegosVector.add(j1);
+        juegosVector.add(jp1);
+        juegosVector.add(ji1);
+        
+        // Mostrar información del vector
+        InfoVector(juegosVector);
+        
+        // Añadir el juego del ahorcado al vector
+        juegosVector.add(ja);
+
+        InfoVector(juegosVector);
+        
+        // Seleccionar un juego del vector
+        mostrarMenu();
+        Scanner scanner = new Scanner(System.in);
+        int opcion;
+        while (true) {
+            System.out.print("Por favor, elija un juego (introduzca un número entre 0 y 3): ");
+            if (scanner.hasNextInt()) {
+                opcion = scanner.nextInt();
+                if (opcion >= 0 && opcion <= 3) {
+                    return juegosVector.get(opcion);
+                } else {
+                    System.out.println("Número fuera de rango. Por favor, elija un número entre 0 y 3.");
+                }
+            } else {
+                System.out.println("Entrada no válida. Por favor, introduzca un número entero.");
+                scanner.next(); // Limpiar el búfer del scanner
+            }
+            mostrarMenu(); // Mostrar el menú de nuevo
+        }
+    }
+    
+    // Método para mostrar la capacidad y el tamaño del vector
+    public static void InfoVector(Vector<Jugable> vector) {
+        System.out.println("Capacidad del vector: " + vector.capacity());
+        System.out.println("Tamaño del vector: " + vector.size());
+    }
+}
 

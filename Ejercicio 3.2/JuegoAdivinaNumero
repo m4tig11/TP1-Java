@@ -1,0 +1,53 @@
+package guzmangreco;
+
+import java.util.Scanner;
+
+
+public class JuegoAdivinaNumero extends Juego {
+    private int numeroAd;
+    
+    public JuegoAdivinaNumero(int vidas,int numeroAd){
+        super(vidas);
+        this.numeroAd = numeroAd;
+    }
+    
+    public int getNumeroAd(){
+        return(numeroAd);
+    }
+    
+    public boolean validaNumero(int numUs){
+        return(true);
+        
+    }
+    
+    @Override
+    public void Juega() {
+        ReiniciaPartida();
+        boolean tieneVida = true;
+        Scanner scanner = new Scanner(System.in);
+        while(tieneVida == true){
+            
+            System.out.println("Adivina un número entre 0 y 10.");
+            int numeroUsuario = scanner.nextInt();
+            
+            if(validaNumero(numeroUsuario)){
+                if (numeroUsuario == numeroAd) {
+                System.out.println("¡Felicidades! ¡Has adivinado el número secreto!");
+                tieneVida = false;
+            } else {
+                System.out.println("Lo siento, ese no era");
+                tieneVida = QuitaVida(); // Restar una vida al jugador
+                if(tieneVida == false){
+                System.out.println("El número a adivinar era " +getNumeroAd()+ ". Mejor suerte la próxima vez.");
+                        
+                }
+            }
+            MuestraVidasRestantes();
+            
+            }
+            
+            
+        }
+        scanner.close();
+        
+    }

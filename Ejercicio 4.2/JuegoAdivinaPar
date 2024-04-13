@@ -1,0 +1,28 @@
+package com.mycompany.tpjava;
+
+public class JuegoAdivinaPar extends JuegoAdivinaNumero {
+    
+    public JuegoAdivinaPar(int vidas, int numeroAd) {
+        super(vidas, numeroAd);
+    }
+    
+    @Override
+    public void MuestraNombre(){
+        System.out.println("Juego Adivina Numero Par");
+    }
+    
+    @Override
+    public void MuestraInfo(){
+        System.out.println("Tendras 5 oportunidades para adivinar un numero par del 1 al 10");
+    }
+    
+    @Override
+    public boolean validaNumero(int numUs){
+        if(numUs%2 == 0){
+            return(true);
+        }else{
+            System.out.println("Tienes que ingresar un numero par");
+            return(false);
+        }
+    }
+}

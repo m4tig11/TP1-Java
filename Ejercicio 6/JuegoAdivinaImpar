@@ -1,0 +1,43 @@
+
+package juegos.numeros;
+
+import juegos.numeros.JuegoAdivinaNumero;
+
+public class JuegoAdivinaImpar extends JuegoAdivinaNumero {
+    private int numeroAd;
+    
+    public JuegoAdivinaImpar(int vidas) {
+        super(vidas);
+    }
+    
+    @Override
+    public void ReiniciaPartida() {
+        super.ReiniciaPartida(); // Call the parent class method
+        
+        // q sea ipar
+        while (numeroAd % 2 == 0) {
+            numeroAd = random.nextInt(11); //generar si es par
+        }
+    }
+    
+    @Override
+    public void MuestraNombre(){
+        System.out.println("Juego Adivina Numero Impar");
+    }
+    
+    @Override
+    public void MuestraInfo(){
+        System.out.println("Tendras 5 oportunidades para adivinar un numero impar del 1 al 10");
+    }
+    
+    @Override
+    public boolean validaNumero(int numUs){
+        if(numUs%2 != 0){
+            return(true);
+        }else{
+            System.out.println("Tienes que ingresar un numero impar");
+            return(false);
+        }
+    }
+}
+

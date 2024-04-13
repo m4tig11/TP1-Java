@@ -1,0 +1,47 @@
+
+package juegos;
+public abstract class Juego {
+    private int vidasIniciales;
+    private int vidasRestantes;
+    private static int record = 0;
+    
+    // Constructor
+    public Juego(int vidasRestantes) {
+        this.vidasRestantes = vidasRestantes;
+        this.vidasIniciales = vidasRestantes;
+    }
+    
+    public abstract void Juega();
+    
+    public boolean QuitaVida() {
+        this.vidasRestantes--;
+        MuestraVidasRestantes();
+        if (vidasRestantes == 0) {
+            System.out.println("Game Over"); 
+            
+            return false;
+        }
+        return true;
+    }
+    
+    public int getVidasRestantes() {
+    return vidasRestantes;
+    }
+    public void MuestraVidasRestantes() {
+        System.out.printf("Vidas restantes: %d\n", vidasRestantes);
+    }
+    
+    public void ReiniciaPartida() {
+        vidasRestantes = vidasIniciales;
+    }
+    
+    public void ActualizarRecord() {
+        if (record == vidasRestantes) {
+            System.out.println("Has alcanzado el record");
+        } else if (vidasRestantes > record) {
+            record = vidasRestantes;
+            System.out.printf("Has batido el record!!! Ahora es de: %d\n", record);
+        }
+    }
+}
+

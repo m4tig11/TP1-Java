@@ -1,0 +1,59 @@
+package com.mycompany.tpjava;
+
+import java.util.Scanner;
+
+public class TpJava {
+    public static boolean jugar = true;
+    public static void main(String[] args){
+        
+        while(jugar == true){
+            Jugable juego = EligeJuego();
+            juego.MuestraNombre();
+            juego.MuestraInfo();
+            juego.Juega();
+            
+        }
+        
+        
+    }
+    
+    public static void mostrarMenu() {
+        System.out.println("Bienvenido al menú de juegos:");
+        System.out.println("0. Juego Adivina numero");
+        System.out.println("1. Juego Adivina numero par");
+        System.out.println("2. Juego Adivina numero impar");
+    }
+
+   
+    public static Jugable EligeJuego(){
+        JuegoAdivinaNumero j1 = new JuegoAdivinaNumero(5,8);
+        JuegoAdivinaPar jp1 = new JuegoAdivinaPar(5,8);
+        JuegoAdivinaImpar ji1 = new JuegoAdivinaImpar(5,1);
+        
+        Jugable[] juegos = new Jugable[3];
+        juegos[0] = j1;
+        juegos[1] = jp1;
+        juegos[2] = ji1;
+        
+        mostrarMenu();
+        Scanner scanner = new Scanner(System.in);
+        int opcion;
+        while (true) {
+            System.out.print("Por favor, elija un juego (introduzca un número entre 0 y 2): ");
+            if (scanner.hasNextInt()) {
+                opcion = scanner.nextInt();
+                if (opcion >= 0 && opcion <= 2) {
+                     return juegos[opcion];
+                } else {
+                    System.out.println("Número fuera de rango. Por favor, elija un número entre 0 y 2.");
+                }
+            } else {
+                System.out.println("Entrada no válida. Por favor, introduzca un número entero.");
+                scanner.next(); // Limpiar el   del scanner
+                
+            }
+            mostrarMenu(); // Mostrar el menú de nuevo
+        }
+    }
+}
+}

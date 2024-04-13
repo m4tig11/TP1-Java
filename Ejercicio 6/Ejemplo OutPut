@@ -1,0 +1,33 @@
+Capacidad del vector: 3
+Tamaño del vector: 3
+Capacidad del vector: 5
+Tamaño del vector: 4
+Bienvenido al menú de juegos:
+0. Juego Adivina numero
+1. Juego Adivina numero par
+2. Juego Adivina numero impar
+3. Juego Ahorcado
+Por favor, elija un juego (introduzca un número entre 0 y 3): 3
+Juego Adivina Ahorcado
+Tendras 5 oportunidades para adivinar la palabra
+Palabra a adivinar: ----
+Introduce una letra: p
+¡Bien! La letra 'p' está en la palabra.
+Palabra a adivinar: p-p-
+Introduce una letra: l
+La letra 'l' no está en la palabra.
+Vidas restantes: 4
+Palabra a adivinar: p-p-
+Introduce una letra: a
+¡Bien! La letra 'a' está en la palabra.
+¡Felicidades! ¡Has adivinado la palabra!
+Capacidad del vector: 3
+Tamaño del vector: 3
+Capacidad del vector: 5
+Tamaño del vector: 4
+Bienvenido al menú de juegos:
+0. Juego Adivina numero
+1. Juego Adivina numero par
+2. Juego Adivina numero impar
+3. Juego Ahorcado
+Por favor, elija un juego (introduzca un número entre 0 y 3): 

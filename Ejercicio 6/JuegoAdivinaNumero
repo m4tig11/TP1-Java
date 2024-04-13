@@ -1,0 +1,74 @@
+package juegos.numeros;
+import juegos.interfaces.Jugable;
+import juegos.Juego;
+import java.util.Scanner;
+import java.util.Random;
+import java.util.Date;
+
+public class JuegoAdivinaNumero extends Juego implements Jugable {
+    Random random;
+    private int numeroAd;
+    
+    public JuegoAdivinaNumero(int vidas){
+        super(vidas);
+        random = new Random(new Date().getTime()); 
+        ReiniciaPartida(); // 
+    }
+    
+    @Override
+    public void ReiniciaPartida() {
+        super.ReiniciaPartida();
+        
+        
+        numeroAd = random.nextInt(11);
+    }
+
+    @Override
+    public void MuestraNombre(){
+        System.out.println("Juego Adivina Numero");
+    }
+    
+    @Override
+    public void MuestraInfo(){
+        System.out.println("Tendras 5 oportunidades para adivinar un numero del 1 al 10");
+    }
+    
+    
+    
+    public int getNumeroAd(){
+        return(numeroAd);
+    }
+    
+    public boolean validaNumero(int numUs){
+        return(true);
+        
+    }
+    
+    @Override
+    public void Juega() {
+        ReiniciaPartida();
+        boolean tieneVida = true;
+        Scanner scanner = new Scanner(System.in);
+        while(tieneVida == true){
+            
+            System.out.println("Adivina un número entre 0 y 10.");
+            int numeroUsuario = scanner.nextInt();
+            
+            if(validaNumero(numeroUsuario)){
+                if (numeroUsuario == numeroAd) {
+                System.out.println("¡Felicidades! ¡Has adivinado el número secreto!");
+                ActualizarRecord();
+                tieneVida = false;
+                
+            } else {
+                System.out.println("Lo siento, ese no era");
+                tieneVida = QuitaVida(); // Restar una vida al jugador
+                if(tieneVida == false){
+                System.out.println("El número a adivinar era " +getNumeroAd()+ ". Mejor suerte la próxima vez.");
+                MuestraVidasRestantes();       
+                }
+            }            
+            }
+        }
+    }
+}

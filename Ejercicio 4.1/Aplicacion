@@ -1,1 +1,19 @@
+package guzmangreco;
+
+public class Aplicacion {
+    public static void main(String[] args){
+        JuegoAdivinaNumero j1 = new JuegoAdivinaNumero(5,8);
+        JuegoAdivinaPar jp1 = new JuegoAdivinaPar(5,8);
+        JuegoAdivinaImpar ji1 = new JuegoAdivinaImpar(5,1);
+        
+        
+        j1.MuestraNombre();//ji1.Juega(); o j1.Juega();
+        j1.MuestraInfo();
+        jp1.MuestraNombre();
+        jp1.MuestraInfo();
+        ji1.MuestraNombre();
+        ji1.MuestraInfo();
+    }
+    
+}
 

@@ -1,0 +1,43 @@
+public class JuegoAdivinaNumero extends Juego {
+    private int numeroAd;
+    
+    public JuegoAdivinaNumero(int vidas,int numeroAd){
+        super(vidas);
+        this.numeroAd = numeroAd;
+        
+        
+        
+    
+    }
+    
+    
+    
+    @Override
+    public void Juega() {
+        ReiniciaPartida();
+        boolean tieneVida = true;
+        Scanner scanner = new Scanner(System.in);
+        while(tieneVida == true){
+            
+            System.out.println("Adivina un número entre 0 y 10.");
+            int numeroUsuario = scanner.nextInt();
+            if (numeroUsuario == numeroAd) {
+                System.out.println("¡Felicidades! ¡Has adivinado el número secreto!");
+                tieneVida = false;
+            } else {
+                System.out.println("Lo siento, el número a adivinar era " + numeroAd + ". Mejor suerte la próxima vez.");
+                tieneVida = QuitaVida(); // Restar una vida al jugador
+    if (vidasRestantes == 0) {
+            System.out.println("Game Over"); 
+            
+            return false;
+        }
+
+            }
+            MuestraVidasRestantes();
+            
+        }
+        scanner.close();
+        
+    }
+}

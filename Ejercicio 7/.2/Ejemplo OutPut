@@ -1,0 +1,43 @@
+
+EJEMPLO 1 CON PALABRA CON NUMERO
+
+Ha ocurrido un error: La palabra a adivinar no puede contener números.
+Fin del programa.
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+EJEMPLO 2 CON PALABRA SIN NUMEROS:
+Capacidad del vector: 3
+Tamaño del vector: 3
+Capacidad del vector: 5
+Tamaño del vector: 4
+Bienvenido al menú de juegos:
+0. Juego Adivina numero
+1. Juego Adivina numero par
+2. Juego Adivina numero impar
+3. Juego Ahorcado
+4. Exit
+Por favor, elija un juego (introduzca un número entre 0 y 3): 3
+Juego Adivina Ahorcado
+Tendras 5 oportunidades para adivinar la palabra
+Palabra a adivinar: ----
+Introduce una letra: p
+¡Bien! La letra 'p' está en la palabra.
+Palabra a adivinar: p-p-
+Introduce una letra: a
+¡Bien! La letra 'a' está en la palabra.
+¡Felicidades! ¡Has adivinado la palabra!
+Capacidad del vector: 3
+Tamaño del vector: 3
+Capacidad del vector: 5
+Tamaño del vector: 4
+Bienvenido al menú de juegos:
+0. Juego Adivina numero
+1. Juego Adivina numero par
+2. Juego Adivina numero impar
+3. Juego Ahorcado
+4. Exit
+Por favor, elija un juego (introduzca un número entre 0 y 3): 4
+Fin del programa.
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

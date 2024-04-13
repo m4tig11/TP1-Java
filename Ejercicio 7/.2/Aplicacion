@@ -3,7 +3,7 @@ package com.mycompany.tpjava;
 import juegos.numeros.JuegoAdivinaPar;
 import juegos.interfaces.Jugable;
 import java.util.Scanner;
-import java.util.Vector; // Importa la clase Vector
+import java.util.Vector; 
 import juegos.excepciones.JuegoException;
 import juegos.letras.JuegoAhorcado;
 import juegos.numeros.JuegoAdivinaImpar;
@@ -44,7 +44,7 @@ public class TpJava {
         JuegoAdivinaImpar ji1 = new JuegoAdivinaImpar(5);
         JuegoAhorcado ja = new JuegoAhorcado(5,"papa");
         
-        // Crear un vector con capacidad 3 e incremento en saltos de 2 elementos
+        //Vector con capacidad 3 e incremento en saltos de 2 elementos
         Vector<Jugable> juegosVector = new Vector<>(3, 2);
         
         // Añadir los juegos al vector
@@ -58,7 +58,7 @@ public class TpJava {
         // Añadir el juego del ahorcado al vector
         juegosVector.add(ja);
         
-        // Mostrar información del vector después de añadir el juego del ahorcado
+        // Mostrar información del vector después de añadire
         InfoVector(juegosVector);
         
         // Seleccionar un juego del vector
@@ -82,7 +82,7 @@ public class TpJava {
                 }
             } else {
                 System.out.println("Entrada no válida. Por favor, introduzca un número entero.");
-                scanner.next(); // Limpiar el búfer del scanner
+                scanner.next(); // Limpiar el scanner
             }
             mostrarMenu(); // Mostrar el menú de nuevo
         }

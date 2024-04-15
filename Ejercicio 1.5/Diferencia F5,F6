@@ -1,0 +1,6 @@
+F5 (Step Into): Si presionas F5 en la línea donde se llama a Teclado.LeeCadena() o Teclado.LeeEntero(), el depurador entraría en el método correspondiente de la clase
+Teclado. Esto significa que pasarías a través de la ejecución línea por línea dentro del método LeeCadena() o LeeEntero()
+
+F6 (Step Over): Al presionar F6 en la línea donde se llama a Teclado.LeeCadena() o Teclado.LeeEntero(), el depurador simplemente ejecutaría esa línea y se detendría en
+la siguiente línea del método main. Esto significa que no te adentrarías en el método LeeCadena() o LeeEntero(), sino que simplemente avanzarías a la siguiente instrucción
+en el método main.
